@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DL Project – Qualitative Videos</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 32px; max-width: 980px; }
+    h1 { margin-bottom: 8px; }
+    .sub { color: #444; margin-top: 0; }
+    .grid { display: grid; grid-template-columns: 1fr; gap: 24px; margin-top: 24px; }
+    @media (min-width: 900px) { .grid { grid-template-columns: 1fr 1fr; } }
+    .card { border: 1px solid #ddd; border-radius: 12px; padding: 16px; }
+    .video { width: 100%; aspect-ratio: 16/9; border: 0; border-radius: 10px; }
+    .meta { font-size: 14px; color: #333; margin-top: 10px; line-height: 1.4; }
+    code { background: #f5f5f5; padding: 2px 6px; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <h1>Qualitative Results (YOLOv8 + ResNet18)</h1>
+  <p class="sub">Two clips illustrating validation performance vs generalization on an unseen test clip.</p>
+
+  <div class="grid">
+    <div class="card">
+      <h2>Validation clip (good example)</h2>
+      <iframe class="video"
+        src="https://www.youtube-nocookie.com/embed/lexA9WE-dog"
+        title="Validation clip"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+      <div class="meta">
+        Overlay format: <code>&lt;class&gt; &lt;yolo_conf&gt;</code>;
+        for players/goalkeepers: <code>TEAM &lt;Left/Right&gt; &lt;team_conf&gt;</code>.
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Test clip (harder example)</h2>
+      <iframe class="video"
+        src="https://www.youtube-nocookie.com/embed/N37B-oxOJd8"
+        title="Test clip"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+      <div class="meta">
+        Typical issues: lower confidence under motion/blur; occasional goalkeeper$\rightarrow$player confusion; less consistent team scores.
+      </div>
+    </div>
+  </div>
+</body>
+</html>
